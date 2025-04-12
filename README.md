@@ -22,7 +22,7 @@ You need docker must be installed
 * gtkwave
 * icefunprog
 
-A full working example is available `in example/`. 
+A full working examples are available `in examples/`. 
 
 ### Bitstream
 
@@ -43,7 +43,7 @@ Based on you verilog, you need to write another verilog file (xxx_tb.v for examp
 
 ## Example
 
-To use the example (after installation), go to the `example/blink` directory and run `sudo easy-ice40`. The current directory is mounted in `/work`. Plug you board and run `make`. If everything is **OK**, a led should blink. Congratulation !
+To use the example (after installation), go to the `examples/blink` directory and run `sudo easy-ice40`. The current directory is mounted in `/work`. Plug you board and run `make`. If everything is **OK**, a led should blink. Congratulation !
 
 To test the source code, you can run `make test`. After some second, GTKwave should appear; Add wave and you will see traces.
 
