@@ -2,4 +2,4 @@
 *.asc
 *.json
 *.vcd
-blink_tb
+*_tb
