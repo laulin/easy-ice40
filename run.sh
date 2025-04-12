@@ -8,10 +8,10 @@ docker run --rm -it \
   -e HOST_UID=$SUDO_UID \
   -e HOST_GID=$SUDO_GID \
   -e HOST_USER=$SUDO_USER \
-  --name icestorm \
+  --name easy-ice40 \
   -e HOME=/home/user \
   -v "$PWD:/work" \
   --privileged -v /dev:/dev \
   -e DISPLAY=$DISPLAY \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
-  icestorm
+  easy-ice40
