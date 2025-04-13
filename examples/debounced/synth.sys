@@ -1,2 +1,4 @@
 read_verilog debouncer.v
-synth_ice40 -top blink -json blink.json
+read_verilog strobe.v
+read_verilog top.v
+synth_ice40 -top top -json top.json

@@ -1,5 +1,8 @@
 build:
-	echo "nothing"
+	yosys -s synth.sys
+	nextpnr-ice40 --hx8k --json top.json --pcf /usr/share/ice40/icefun/pinout.pcf --asc top.asc --package cb132
+	icepack top.asc top.bin
+	icefunprog /dev/ttyACM0 top.bin
 
 test_debouncer:
 	iverilog -o debouncer_tb debouncer.v debouncer_tb.v

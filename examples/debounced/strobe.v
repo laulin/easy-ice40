@@ -17,12 +17,12 @@ module strobe(
             threshold <= 0;
         end else begin
             
-
-            case (select)
-                4'b0001: threshold <= 10;
-                4'b0010: threshold <= 15;
-                4'b0100: threshold <= 20;
-                4'b1000: threshold <= 25;
+            // clk @12Mhz
+            case (select)                        // half period :
+                4'b0001: threshold <= 600_000; // 100ms
+                4'b0010: threshold <= 1_500_000; // 250ms
+                4'b0100: threshold <= 3_000_000; // 500ms
+                4'b1000: threshold <= 6_000_000; // 1sec
                 default: threshold <= 0;
             endcase
 
