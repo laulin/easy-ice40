@@ -48,6 +48,13 @@ To use the example (after installation), go to the `examples/blink` directory an
 To test the source code, you can run `make test`. After some second, GTKwave should appear; Add wave and you will see traces.
 
 ## useful link
+### benchmark
 * https://hardwarebee.com/ultimate-guide-verilog-test-bench/
 * https://www.chipverify.com/verilog/verilog-testbench
 * https://www.successbridge.co.in/verilog-modules-and-testbenches/
+
+### general purpose
+* https://www.fpga4fun.com/
+* https://nandland.com/
+* cheatsheet : https://marceluda.github.io/rp_dummy/EEOF2018/Verilog_Cheat_Sheet.pdf
+* https://www.chipverify.com/verilog/
