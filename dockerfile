@@ -1,8 +1,9 @@
 FROM ubuntu:24.04
 
-RUN apt update && apt upgrade -y && apt install -y nextpnr-ice40 yosys fpga-icestorm python3 python3-pip iverilog gtkwave cmake
+RUN apt update && apt upgrade -y && apt install -y nextpnr-ice40 yosys fpga-icestorm python3 python3-pip iverilog gtkwave verilator
 
-RUN pip3 install --break-system-packages -U icefunprog
+RUN pip3 install --break-system-packages -U icefunprog apio
+RUN apio install oss-cad-suite
 
 RUN mkdir /work
 RUN mkdir /home/user

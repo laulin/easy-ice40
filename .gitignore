@@ -4,3 +4,8 @@
 *.vcd
 *_tb
 *.gtkw
+**/abc.history
+*.out
+*.dblite
+*.svg
+*.dot
