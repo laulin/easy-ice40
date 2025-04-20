@@ -16,23 +16,36 @@ localparam EXECUTE = 3'b100;
 
 reg [7:0] accumulator;
 reg [15:0] pc;
-reg [7:0] adl, adh;
+reg [7:0] adl;
+reg [7:0] adh;
 reg [2:0] state;
 reg [7:0] opcode;
 
+// used to manage tri stage data bus
+// On rw == 1, data is in high impedance
+// On rw == 0, data copies data_reg
+reg rw_reg;
+reg [7:0] data_reg;
 
-assign rw = (state != EXECUTE) ? 1'b1 : 1'b0;
-assign data = (rw) ? 8'bZZZZZZZZ : 8'h00;
+assign rw = rw_reg;
+assign data = (rw == 0) ? data_reg : 8'bz;
 
-always @(posedge clk or negedge reset) begin
+always @(posedge clk) begin
     if (!reset) begin
         pc <= 16'h0000;
         state <= FETCH_OPCODE;
         accumulator <= 8'h00;
+        rw_reg <= 1;
+        data_reg <= 8'h00;
+        adl <=  8'h00;
+        adh <=  8'h00;
+        opcode <=  8'h00;
+        addr  <=  8'h00;
     end else begin
         case (state)
             // fetch
             FETCH_OPCODE: begin
+                rw_reg <= 1;
                 addr <= pc;
                 opcode <= data;       
                 pc <= pc + 1;
