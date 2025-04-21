@@ -28,7 +28,7 @@ reg rw_reg;
 reg [7:0] data_reg;
 
 assign rw = rw_reg;
-assign data = (rw == 0) ? data_reg : 8'bz;
+assign data = (rw == 0) ? data_reg : 8'bzzzzzzzz;
 
 always @(posedge clk) begin
     if (!reset) begin
